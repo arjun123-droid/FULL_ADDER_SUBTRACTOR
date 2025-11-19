@@ -38,18 +38,54 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+![WhatsApp Image 2025-11-19 at 10 25 07_0a44b0da](https://github.com/user-attachments/assets/939d0fb9-9b4a-4e61-bcb9-92fe047233a3)
+
+![WhatsApp Image 2025-11-19 at 10 25 07_9c1abeca](https://github.com/user-attachments/assets/5c4856b9-0b05-4ba2-8552-c99acf35efd0)
+
+
 **Procedure**
 
 Write the detailed procedure here
 
 **Program:**
-
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
-
+```
+ Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+ Developed by:Arjun.R.S
+ RegisterNumber:25017547
+```
+**Full Adder**
+```
+module Fulladder(a,b,c,sum,carry);
+ input a,b,c;
+ output sum,carry;
+ xor(sum,a,b,c);
+ assign carry=a&b | b&c | a&c;
+ endmodule
+```
 **RTL Schematic**
 
+<img width="1920" height="1080" alt="Screenshot 2025-11-19 103429" src="https://github.com/user-attachments/assets/10c11ce6-61af-438b-bf37-2796abd029bb" />
+
 **Output Timing Waveform**
+
+<img width="1920" height="1080" alt="Screenshot 2025-11-19 104456" src="https://github.com/user-attachments/assets/3ee6ebe8-27d3-48f0-a2a0-6b9d013b3013" />
+
+**Full subtractor**
+```
+module Fullsubtractor(diff,borrow,a,b,c);
+input a,b,c;
+output diff,borrow;
+xor(diff,a,b,c);
+assign borrow= (~a)&c | (~a)&b | (b&c);
+endmodule
+```
+**RTL Schematic**
+
+<img width="1920" height="1080" alt="Screenshot 2025-11-19 105102" src="https://github.com/user-attachments/assets/27e5ed50-ea22-4f7b-a10a-fdd045853f88" />
+
+**Output Timing Waveform**
+
+<img width="1920" height="1080" alt="Screenshot 2025-11-19 105505" src="https://github.com/user-attachments/assets/e2006c76-c380-493d-a07e-dbf0b39d6d57" />
 
 **Result:**
 
